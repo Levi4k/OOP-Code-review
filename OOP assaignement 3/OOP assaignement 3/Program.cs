@@ -14,16 +14,14 @@ namespace OOP_assaignement_3
             {//basic menu
                 Console.WriteLine("Would you like to compare the two files?");
                 Answer = Console.ReadLine();
-                Answer.ToLower();
+                Answer = Answer.ToLower();
                 if (Answer == "yes")
                 {
                     break;
                 }
                 else if (Answer == "no")
                 {
-                    Console.WriteLine("Please close the application");
-                    Console.WriteLine();
-                    break;
+                    Environment.Exit(0);
                 }
                 else
                 {
