@@ -40,6 +40,7 @@ namespace OOP_assaignement_3
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Your files are different!");
+                Console.ReadLine();
             }
         }
 
