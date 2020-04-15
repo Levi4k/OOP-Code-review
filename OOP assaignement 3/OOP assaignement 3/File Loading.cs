@@ -36,23 +36,42 @@ namespace OOP_assaignement_3
                 Console.WriteLine("Your files are the same!");
                 Console.ReadLine();
             }
+            else if (Answer == "NO1")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Your first file is longer!");
+                Console.ReadLine();
+            }
+            else if (Answer == "NO2")
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Your second file is longer!");
+                Console.ReadLine();
+            }
             else 
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Your files are different!");
+                Console.WriteLine("The data point they differ on is shown above.");
                 Console.ReadLine();
             }
         }
 
         private static string File_Check(string[] File1, string[] File2)
         {
+            string Different_Length1 = "NO1";
+            string Different_Length2 = "NO2";
             string Same = "yes";
             string Different = "no";
             int i;
             //checks length of files
-            if (File1.Length != File2.Length)
+            if (File1.Length > File2.Length)
             {
-                return (Different);
+                return (Different_Length1);
+            }
+            else if (File1.Length < File2.Length)
+            {
+                return (Different_Length2);
             }
             else
             {//checks actual characters of files to make sure they are the same
@@ -60,6 +79,8 @@ namespace OOP_assaignement_3
                 {
                     if (File1[i] != File2[i])
                     {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine(i);
                         return (Different);
                     }
                 }
