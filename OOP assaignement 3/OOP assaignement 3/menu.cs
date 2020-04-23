@@ -33,16 +33,16 @@ namespace OOP_assaignement_3
             } while (Answer != "yes" || Answer != "no");
             do
             {
-                Console.WriteLine("Which file do you want to compare(1 or 2)?");
+                Console.WriteLine("Which file do you want to compare(Between 1 and 6)?");
                 if (!int.TryParse(Console.ReadLine(), out file_First))
                 {
                     Console.WriteLine("Only enter numbers please!");
                 }
-                else if (file_First == 1 || file_First == 2)
+                else if (file_First >=1 && file_First <= 6)
                     break;
                 else
-                    Console.WriteLine("Please only enter 1 or 2");
-            } while (file_First != 1 || file_First != 2);
+                    Console.WriteLine("Please only enter Between 1 and 6");
+            } while (file_First !>= 1 || file_First !<= 6);
             do
             {
                 Console.WriteLine("Which file do you want to compare second(1 or 2)?");
@@ -50,12 +50,12 @@ namespace OOP_assaignement_3
                 {
                     Console.WriteLine("Only enter numbers please!");
                 }
-                if (file_Second == 1 || file_Second == 2)
+                if (file_Second >= 1 || file_Second <= 6)
                     break;
                 else
-                    Console.WriteLine("Please only enter 1 or 2");
+                    Console.WriteLine("Please only enter Between 1 and 6");
 
-            } while (file_Second != 1 || file_Second != 2);
+            } while (file_Second !>= 1 || file_Second !<= 2);
             File_Loading.Loading_Files(file_First, file_Second);//calls the next function
         }
     }

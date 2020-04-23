@@ -12,13 +12,30 @@ namespace OOP_assaignement_3
             string[] File1;
             string[] File2;
             if (file_First == 1)
-                File1 = System.IO.File.ReadAllLines("..\\file1.txt");
-            else
-                File1 = System.IO.File.ReadAllLines("..\\file2.txt");
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_1a.txt");
+            else if (file_First == 2)
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_1b.txt");
+            else if(file_First == 3)
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_2a.txt");
+            else if (file_First == 4)
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_2b.txt");
+            else if (file_First == 5)
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_3a.txt");
+            else 
+                File1 = System.IO.File.ReadAllLines("..\\GitRepositories_3b.txt");
+
             if (file_Second == 1)
-                File2 = System.IO.File.ReadAllLines("..\\file1.txt");
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_1a.txt");
+            else if (file_Second == 2)
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_1b.txt");
+            else if (file_Second == 3)
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_2a.txt");
+            else if (file_Second == 4)
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_2b.txt");
+            else if (file_Second == 5)
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_3a.txt");
             else
-                File2 = System.IO.File.ReadAllLines("..\\file2.txt");
+                File2 = System.IO.File.ReadAllLines("..\\GitRepositories_3b.txt");
 
 
 
@@ -52,7 +69,7 @@ namespace OOP_assaignement_3
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Your files are different!");
-                Console.WriteLine("The data point they differ on is shown above.");
+                Console.WriteLine("The line they differ on is shown above.");
                 Console.ReadLine();
             }
         }
@@ -80,7 +97,7 @@ namespace OOP_assaignement_3
                     if (File1[i] != File2[i])
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine(i);
+                        Console.WriteLine(i-1);
                         return (Different);
                     }
                 }
